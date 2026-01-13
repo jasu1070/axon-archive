@@ -1,0 +1,8 @@
+{
+  "name": "AXON PRIME - Neural Commerce",
+  "description": "A high-intensity, industrial-grade e-commerce hub featuring neural grounding and biometric security simulation.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AXON PRIME // NEURAL_HUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Plus+Jakarta+Sans:wght@200;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --axon-neon: #DFFF00;
+        --axon-bg: #010101;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: var(--axon-bg);
+        color: #ffffff;
+        overflow-x: hidden;
+        cursor: none;
+      }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      
+      .scanline {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(255,255,255,0.02) 50%);
+        background-size: 100% 4px;
+        pointer-events: none;
+        z-index: 9998;
+      }
+
+      .glitch-hover:hover {
+        animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+      }
+
+      @keyframes glitch {
+        0% { transform: translate(0) }
+        20% { transform: translate(-2px, 2px) }
+        40% { transform: translate(-2px, -2px) }
+        60% { transform: translate(2px, 2px) }
+        80% { transform: translate(2px, -2px) }
+        100% { transform: translate(0) }
+      }
+
+      .glass-heavy {
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(40px);
+        border: 2px solid rgba(255, 255, 255, 0.05);
+      }
+
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--axon-bg); }
+      ::-webkit-scrollbar-thumb { background: #333; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--axon-neon); }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+        "framer-motion": "https://esm.sh/framer-motion@^12.26.1",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div class="scanline"></div>
+    <div id="root"></div>
+  </body>
+</html>
